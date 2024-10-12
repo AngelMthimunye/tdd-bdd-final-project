@@ -105,7 +105,6 @@ class TestProductModel(unittest.TestCase):
     # ADD YOUR TEST CASES HERE
     #
     def test_read_a_product(self):
-        """It should Read a Product"""
         product = ProductFactory()
         product.id = None
         product.create()
@@ -118,7 +117,6 @@ class TestProductModel(unittest.TestCase):
         self.assertEqual(found_product.price, product.price)
 
     def test_update_a_product(self):
-        """It should Update a Product"""
         product = ProductFactory()
         product.id = None
         product.create()
@@ -137,7 +135,6 @@ class TestProductModel(unittest.TestCase):
         self.assertEqual(products[0].description, "testing")
 
     def test_delete_a_product(self):
-        """It should Delete a Product"""
         product = ProductFactory()
         product.create()
         self.assertEqual(len(Product.all()), 1)
@@ -146,7 +143,6 @@ class TestProductModel(unittest.TestCase):
         self.assertEqual(len(Product.all()), 0)
 
     def test_list_all_products(self):
-        """It should List all Products in the database"""
         products = Product.all()
         self.assertEqual(products, [])
         # Create 5 Products
